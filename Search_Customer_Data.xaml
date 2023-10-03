@@ -1,0 +1,306 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Search_Customer_Data" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_Stock_Symbol" Type="InArgument(x:String)" />
+    <x:Property Name="In_Current_Row_index" Type="InArgument(x:String)" />
+    <x:Property Name="Current_File" Type="InArgument(x:String)" />
+    <x:Property Name="argument1" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>734.208,3485.184</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Search_Customer_Data_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="66">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="62">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Search_Customer_Data" sap:VirtualizedContainerService.HintSize="744.192,3419.904" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="Bln_Symbl_Valid" />
+      <Variable x:TypeArguments="x:String" Default="https://www.nasdaq.com/market-activity/stocks" Name="Url_Stock" />
+      <Variable x:TypeArguments="x:String" Name="Symbl_Market_Cap" />
+      <Variable x:TypeArguments="x:String" Name="Symbl_Pe_Ratio" />
+      <Variable x:TypeArguments="x:String" Name="Symbl_hi_lo" />
+      <Variable x:TypeArguments="x:String" Name="Symbl_Share_Vol" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="702.72,93.696" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start Customer search Workflow&quot;]" />
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Stock Market Data with Stock Price Feeds | Nasdaq" sap:VirtualizedContainerService.HintSize="702.72,3194.88" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="IfNotOpen" ScopeGuid="462f2d28-9a76-4761-94d7-a68891eac393" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="668.928,2977.536" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="627.456,2883.072" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Activity" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="585.984,52.224" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="462f2d28-9a76-4761-94d7-a68891eac393" Text="[In_Stock_Symbol]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.nasdaq.com/market-activity/stocks" DesignTimeRectangle="526, 529, 266, 88" ElementType="InputBox" FriendlyName="'INPUT find-symbol-input…'" FullSelectorArgument="&lt;webctrl id='find-symbol-input-dark' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='find-symbol-input-dark' tag='INPUT' type='text' class='find-symbol__input js-bound' aaname='Find a Symbol' /&gt;" Guid="5dc7190e-a3b1-4dc3-8ba3-435c43e2c128" ImageBase64="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" InformativeScreenshot="7eb6fa02808158c058cc02f350196db7.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Stock Market Data with Stock Price Feeds | Nasdaq' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="526, 490, 164, 24" ElementType="Text" FriendlyName="'Find a Symbol'" FullSelectorArgument="&lt;webctrl aaname='Find a Symbol' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Find a Symbol' tag='LABEL' type='' class='find-symbol__input-label' check:innerText='FIND A SYMBOL' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NTypeInto>
+              <uix:NClick ClickType="Single" DelayAfter="[10s]" DisplayName="Submit Button" sap:VirtualizedContainerService.HintSize="585.984,52.224" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="462f2d28-9a76-4761-94d7-a68891eac393" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.nasdaq.com/market-activity/stocks" DesignTimeRectangle="754, 892, 23, 88" ElementType="Button" FriendlyName="'BUTTON'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='find-symbol__submit' aaname='' /&gt;" Guid="392e2467-2248-4e13-bc44-11deb3e8a1d0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABsAAABcCAYAAACfic6BAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEzkAABM5AY/CVgEAAALYSURBVGhD7Zq/a9tAFMf7/3jP3yG8m8wVGQwZutR0MR1ModgQTKF4qQgYD8UEigrBhYKGIA9Gg5HBoCHYEBAENAQEhm9P+Cy9k84/dc6Q3oPP4vvxEe9079ngd5VKBa/FG5ZdXFzgtdAyJWiZErRMCVqmBC1TgpYpQcuUoGVK+K9lBszPPdhjH4vnGPFLRrQM4P3pofnekKwrslNW+2IjeMZBEc1ttC7l+2zYIqvDmoR8myNiFcHv1yX7rZHI6hgGMV/NIw7hOwN0r2vZvKqJDzcDONMQ4uwYwa8GDGHPNTmZAWtGl8YIxxYaVTqniPHRgvskrgt+moV5gsy49clTsgV321NShGVkToRxgOGVOIfI2nAjPpFF9NAWJh5GEw456njSFcZTmdH3+RQWkYs2mXQUX12kz7zyMSBHkMqsGZ/AYvG7mO/DMWE/8o1Y+LfZGJfRFC4wyuX6WMz7Bd+LJWmcHQeXDRHwwVIp3NAhqQyG6efnkdFz2yl78dDbLDqV7152hYqyFty0Bio+s4dW+jmX5d7G+3Jv42jJN2IheRsZrHqkkaRyT4nahkFTyO6ZRcYyWe72J6+srJjupMquEGlJodMUxoks91RJbdxSvaVUG7Bpt5BkR5AlVb89JgWSRTg5pOoP4AvLIridYvfOyRJy1TsJ1hQXEweDmwbqvBvXrhvo9h14S/HhdnULiSyhhi47wJxyf7Am6/44qlNnWNMDdSvWZKcnfwdJsOCv+GbsDPyxhyAIEW2+XUUhgrkHp99NU7uPrTKhvz3aMCVzjmWLTOxJ5fpbhlx2ZbMKySPXbcsglTX+klIyswrjpyKR0bIVw/uWHz+doow2PhWNlFCQdSfZ3coX0rLkZPRuhXA+0bHyCLJz3C2KIDM7I/hP6xML7g77zXUMxRck4dKEqehuUeSyM6FlStAyJWiZErRMCVqmBC1TgpYpQcuU8IZlsj9jnYcK/gGqNO7O28MsjwAAAABJRU5ErkJggg==" InformativeScreenshot="8211f34cb2ad952da59c7806963af1f4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Stock Market Data with Stock Price Feeds | Nasdaq' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NClick>
+              <uix:NCheckState DelayBefore="[20s]" DisplayName="Check App State 'Key Data'" Exists="[Bln_Symbl_Valid]" sap:VirtualizedContainerService.HintSize="585.984,251.136" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="462f2d28-9a76-4761-94d7-a68891eac393" Timeout="[10s]" Version="V1">
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.nasdaq.com/market-activity/stocks/ibm" DesignTimeRectangle="76, 599, 158, 58" ElementType="Text" FriendlyName="'Key Data'" FullSelectorArgument="&lt;html app='chrome.exe' title='* | Nasdaq' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' idx='5' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='H2' class='module-header' aaname='         Key Data       ' check:innerText='Key Data' /&gt;" Guid="7a54f215-db62-494a-a365-b2dc2fe78942" ImageBase64="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" InformativeScreenshot="a23db6ef4dd4e054898c11157727ff3a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='International Business Machines Corporation Common Stock (IBM) Stock Price, Quote, News &amp;amp; History | Nasdaq' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                </uix:NCheckState.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheckState>
+              <If Condition="[Bln_Symbl_Valid]" sap:VirtualizedContainerService.HintSize="585.984,2179.584" sap2010:WorkflowViewState.IdRef="If_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="550.656,1989.12" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: International Business Machines Corporation Common Stock (IBM) Stock Price, Quot" sap:VirtualizedContainerService.HintSize="509.184,1894.656" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="99634f51-be0a-4717-a339-06cb336ca0de" Version="V2" WindowResize="Maximize">
+                      <uix:NApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.392,1677.312" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NGetText DisplayName="Get Text Pe-Ratio" sap:VirtualizedContainerService.HintSize="433.92,157.44" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="99634f51-be0a-4717-a339-06cb336ca0de" Version="V1">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.nasdaq.com/market-activity/stocks/ibm" DesignTimeRectangle="946, 501, 295, 52" ElementType="Text" FriendlyName="'22.7'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='*[0..19]' matching:tableRow='regex' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='summary-data__cell' tag='TD' /&gt;" Guid="d9471abd-22f2-4381-a2c2-84809db985e3" ImageBase64="" InformativeScreenshot="9f3fb2c21f2799ad0c62eb4040770740.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='International Business Machines Corporation Common Stock (IBM) Stock Price, Quote, News &amp;amp; History | Nasdaq' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                              </uix:NGetText.Target>
+                              <uix:NGetText.Text>
+                                <OutArgument x:TypeArguments="x:String">[Symbl_Pe_Ratio]</OutArgument>
+                              </uix:NGetText.Text>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NGetText>
+                            <uix:NGetText DisplayName="Get Text 'Market Cap" sap:VirtualizedContainerService.HintSize="433.92,157.44" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="99634f51-be0a-4717-a339-06cb336ca0de" Version="V1">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.nasdaq.com/market-activity/stocks/ibm" DesignTimeRectangle="946, 845, 295, 52" ElementType="Text" FriendlyName="'124,517,826,393'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='*[0..19]' matching:tableRow='regex' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='summary-data__cell' tag='TD' /&gt;" Guid="63559afc-2417-40a2-b5f0-9bde2a1b0153" ImageBase64="" InformativeScreenshot="0b30571718bd651f0772fcb485b48cf1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='International Business Machines Corporation Common Stock (IBM) Stock Price, Quote, News &amp;amp; History | Nasdaq' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                              </uix:NGetText.Target>
+                              <uix:NGetText.Text>
+                                <OutArgument x:TypeArguments="x:String">[Symbl_Market_Cap]</OutArgument>
+                              </uix:NGetText.Text>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NGetText>
+                            <uix:NGetText DisplayName="Get Text Today's Hi/Lo" sap:VirtualizedContainerService.HintSize="433.92,157.44" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="99634f51-be0a-4717-a339-06cb336ca0de" Version="V1">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.nasdaq.com/market-activity/stocks/ibm" DesignTimeRectangle="349, 658, 295, 52" ElementType="Text" FriendlyName="'$138.62/$136.50'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='*[0..19]' matching:tableRow='regex' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='summary-data__cell' tag='TD' /&gt;" Guid="264e3e8b-3662-481e-85c1-5146e25488da" ImageBase64="" InformativeScreenshot="d5696ae86131c61dc6b357ab4f56c62a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='International Business Machines Corporation Common Stock (IBM) Stock Price, Quote, News &amp;amp; History | Nasdaq' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                              </uix:NGetText.Target>
+                              <uix:NGetText.Text>
+                                <OutArgument x:TypeArguments="x:String">[Symbl_hi_lo]</OutArgument>
+                              </uix:NGetText.Text>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NGetText>
+                            <uix:NGetText DisplayName="Get Text -Share Volume" sap:VirtualizedContainerService.HintSize="433.92,157.44" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="99634f51-be0a-4717-a339-06cb336ca0de" Version="V1">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.nasdaq.com/market-activity/stocks/ibm" DesignTimeRectangle="349, 710, 295, 52" ElementType="Text" FriendlyName="'4,547,925'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='*[0..19]' matching:tableRow='regex' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='summary-data__cell' tag='TD' /&gt;" Guid="6f5b4f61-5c5a-41f8-b523-61ca4a00bcf7" ImageBase64="" InformativeScreenshot="408b0ec680095c1ab04dcc2637670cd1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='International Business Machines Corporation Common Stock (IBM) Stock Price, Quote, News &amp;amp; History | Nasdaq' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                              </uix:NGetText.Target>
+                              <uix:NGetText.Text>
+                                <OutArgument x:TypeArguments="x:String">[Symbl_Share_Vol]</OutArgument>
+                              </uix:NGetText.Text>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NGetText>
+                            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="433.92,82.944" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[Url_Stock]" Version="V1" />
+                            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="433.92,670.464" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[Current_File]">
+                              <ui:ExcelApplicationScope.Body>
+                                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.552,561.408" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:ExcelWriteCell Cell="[&quot;B&quot; +In_Current_Row_Index.ToString]" DisplayName="Write Cell-Pe-Ratio" sap:VirtualizedContainerService.HintSize="334.08,87.552" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Sheet1" Text="[Symbl_Pe_Ratio]" />
+                                    <ui:ExcelWriteCell Cell="[&quot;C&quot; +In_Current_Row_Index.ToString]" DisplayName="Write Cell-Hi/Lo" sap:VirtualizedContainerService.HintSize="334.08,87.552" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Sheet1" Text="[Symbl_hi_lo]" />
+                                    <ui:ExcelWriteCell Cell="[&quot;D&quot; +In_Current_Row_Index.ToString]" DisplayName="Write Cell-Share Volume" sap:VirtualizedContainerService.HintSize="334.08,87.552" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Sheet1" Text="[Symbl_Share_Vol]" />
+                                    <ui:ExcelWriteCell Cell="[&quot;E&quot; +In_Current_Row_Index.ToString]" DisplayName="Write Cell-Market Cap" sap:VirtualizedContainerService.HintSize="334.08,87.552" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Sheet1" Text="[Symbl_Market_Cap]" />
+                                  </Sequence>
+                                </ActivityAction>
+                              </ui:ExcelApplicationScope.Body>
+                            </ui:ExcelApplicationScope>
+                          </Sequence>
+                        </ActivityAction>
+                      </uix:NApplicationCard.Body>
+                      <uix:NApplicationCard.TargetApp>
+                        <uix:TargetApp Area="-9, -9, 1938, 1037" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="637ddfe26dad5d2f0dec66ccea20f8c4.png" Selector="&lt;html app='chrome.exe' title='* | Nasdaq' /&gt;" Url="https://www.nasdaq.com/market-activity/stocks/ibm" />
+                      </uix:NApplicationCard.TargetApp>
+                    </uix:NApplicationCard>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="585.984,93.696" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Completed the Customer Search Workflow&quot;]" />
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="47, 0, 1720, 1031" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="7027c3edaeb213dae844a2f8b7d3d535.png" Selector="&lt;html app='chrome.exe' title='Stock Market Data with Stock Price Feeds | Nasdaq' /&gt;" Url="https://www.nasdaq.com/market-activity/stocks" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
